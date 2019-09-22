@@ -1,0 +1,327 @@
+
+body {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=132), auto;
+}
+
+#home{
+    background-size: 103% 41%, 103% 20%, 103% 20%, 103% 20%, 103% 20%;
+    background-position: 50% 0% ,50% 47% ,50% 60%, 50% 83%, 50% 100% ;
+    background-repeat: no-repeat;
+    background-image:  url(./img/backgrounds/universe.gif), 
+    url(./img/backgrounds/stars.gif),
+    url(./img/backgrounds/stars.gif), 
+    url(./img/backgrounds/bluestatic.png), 
+    url(./img/backgrounds/bluestatic.png); 
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=132), auto;
+}
+
+#about {
+    background: linear-gradient(180deg, #00FF29 0%, #000000 83.48%);
+    background-size: 103%, 100%;
+    background-repeat: no-repeat;
+}
+
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-flex {
+    color: #78F000;
+}
+
+.header-flex .player {
+    align-self: flex-end;
+    margin-right: -32%;
+}
+
+.header-flex .player button {
+    background-color: transparent;
+    border: none;
+}
+.header-flex .player button img {
+    width: 50px;
+    height: 50px;
+}
+
+.header-flex .player button:focus {
+    outline:0;
+}
+
+#stop {
+    display: none;
+}
+
+
+.left-wrapper {
+    width: 15%;
+    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#about .left-wrapper {
+    height: 500px;
+}
+
+#about .right-wrapper {
+    height: 500px;
+}
+
+#about .news-wrapper .wrapper{
+    background-image: url('./img/backgrounds/pinkback.png');
+}
+
+#about .news-wrapper .wrapper p {
+color: #FA00FF;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 2rem;
+letter-spacing: 0.15em;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+margin: 1rem;
+text-align: left;
+}
+
+.left-wrapper .top-div{
+    margin: 1.5rem;
+}
+
+.left-wrapper .top-div .ironborder{
+    margin-left: -30rem;
+    height: 20px;
+    margin-bottom: 2rem;
+}
+
+.left-wrapper .top-div .site-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-wrapper .top-div .site-links a {
+    color: red;
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.left-wrapper .top-div .useful-links {
+    margin-top: 1rem;
+}
+
+
+ div.left-wrapper > div > div:nth-child(4) > img {
+    margin-top: 1rem;
+    width: 120px;
+    height: 100px;
+    margin-bottom: -2rem;
+ }
+
+ div > div.left-wrapper > img {
+    height: 200px;
+    width: 2;
+    margin-left: 4rem;
+}
+
+
+.right-wrapper {
+    margin-top: 10rem;
+    margin-right: -3rem;
+    width: 20%;
+    height: 1600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+}
+.right-wrapper img {
+    margin-right: 5rem;
+}
+
+.right-wrapper img:first-child {
+    width: 100%;
+    padding-right: 200%;
+    overflow: visible;
+    
+}
+
+.right-wrapper img:last-child {
+    width: 80%;
+    padding-right: 200%;
+    overflow: visible;
+    
+}
+
+.news-wrapper > p {
+    color: white;
+    font-size: 20px;
+}
+
+.news-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0;
+    align-items: center;
+}
+
+.news-wrapper #irondivider {
+    width: 170%;
+    height: 20px;
+}
+
+.news-wrapper #counter{
+    margin-top: 1rem;
+}
+
+.news-wrapper .wrapper {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    margin: 3rem auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+    border: 5px solid silver; 
+    box-shadow:
+    0 0 0 3px hsl(0, 0%, 30%), 
+    0 0 0 5px hsl(0, 25%, 75%),
+     0 0 0 5px hsl(0, 1%, 10%);
+}
+
+.news-wrapper .wrapper div:first-child {
+    border-bottom: 5px solid silver;
+    width: 100%;
+    display: flex;
+    box-shadow:
+    0 0 0 3px hsl(0, 0%, 30%), 
+    0 0 0 5px hsl(0, 25%, 75%),
+     0 0 0 5px hsl(0, 1%, 10%);
+}
+
+.news-wrapper .wrapper div:first-child img {
+    height: 40%;
+    margin: 1.2rem;
+}
+
+.wrapper div:last-child {
+    margin-bottom: 1rem;
+}
+
+.news-wrapper .wrapper:nth-child(2){
+    background-image:  url(./img/backgrounds/wrapback1.png); 
+}
+.news-wrapper .wrapper:nth-child(4){
+    background-image:  url(./img/backgrounds/wrapback2.gif);
+}
+
+.news-wrapper .wrapper:nth-child(6){
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0.52%, #78F000 66.15%);
+}
+
+.img-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.header-flex {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.header-flex img:nth-child(2) {
+    height: 12px;
+}
+
+::-webkit-scrollbar {
+    width:21px;
+	height:21px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color:silver;
+	border-left:ridge 2px #fff;
+	border-top:ridge 2px #fff;
+	border-right:ridge 2px grey;
+	border-bottom:ridge 2px grey;
+	width:21px;
+	height:21px;
+	display:block;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #bbbbbb;
+  }
+  /* Buttons */
+  ::-webkit-scrollbar-button:single-button {
+    background-color:silver;
+	border-left:ridge 2px #fff;
+	border-top:ridge 2px #fff;
+	border-right:ridge 2px grey;
+	border-bottom:ridge 2px grey;
+	width:21px;
+	height:21px;
+	display:block;
+  }
+  /* Up */
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image:url(./img/OldScroll/sprite-old-school-scroll.png);
+	background-position:-17px 0;
+	width:17px;
+	height:18px;
+    height:22px;
+  }
+
+  /* Down */
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image:url(./img/OldScroll/sprite-old-school-scroll.png);
+	background-position:-70px 0;
+	width:18px;
+	height:17px;
+	height:22px
+  }
+  ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image:url(./img/OldScroll/sprite-old-school-scroll.png);
+	background-position:-37px 0;
+	width:18px;
+	height:17px;
+	height:22px
+  }
+  ::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image:url(./img/OldScroll/sprite-old-school-scroll.png);
+	background-position:-54px 0;
+	width:18px;
+	height:17px;
+	height:22px
+  }
+  
+  ::-webkit-scrollbar-button:horizontal:end:increment{
+	background-image:url(./img/OldScroll/sprite-old-school-scroll.png);
+	background-size:70px 18px
+}
+
+body::-webkit-scrollbar-track
+{
+	background-image:url(./img/OldScroll/bg-scrollbar-track.png);
+	background-size:2px
+}
