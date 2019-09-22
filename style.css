@@ -1,5 +1,5 @@
 
-html, body {
+body {
     cursor: url(http://www.rw-designer.com/cursor-extern.php?id=132), auto;
     width: 100%;
     margin: 0px;
@@ -20,9 +20,13 @@ html, body {
 }
 
 #about {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
     background: linear-gradient(180deg, #00FF29 0%, #000000 83.48%);
-    background-size: 103%, 100%;
+    background-size: 103%, 110%;
     background-repeat: no-repeat;
+    height: 110%;
 }
 
 
@@ -72,7 +76,7 @@ html, body {
 }
 
 #about .right-wrapper {
-    height: 500px;
+    height: 580px;
 }
 
 #about .news-wrapper .wrapper{
