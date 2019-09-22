@@ -35,7 +35,7 @@ async function gifsDisplay(order) {
 
 
     // Setting Google Api
-    toTranslate = await toTranslate.replace(/-/gi, '').replace(/&#/gi, '').replace('&', '').replace(/–/gi, '');
+    toTranslate = await toTranslate.replace('-', 'a').replace('&quot;', 'a');
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyD7wS-_BbZrAHnua7AhZlAh7Owa1dCOMwk&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
