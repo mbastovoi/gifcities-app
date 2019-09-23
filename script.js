@@ -3,9 +3,10 @@ const newsLanguage = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn"
 
 
 async function gifsDisplay(order) {
-    const orderIs = order;
+
     const rndNum = Math.floor(Math.random() * newsLanguage.length);
     let newsApi = "https://newsapi.org/v2/top-headlines?country=" + newsLanguage[rndNum] + "&apiKey=5bc326028c0b492591ab8997ee40f0c8";
+
     // Setting News Api
     let newsResponse = await fetch(newsApi);
     let json1 = await newsResponse.json();
@@ -20,6 +21,7 @@ async function gifsDisplay(order) {
     headerStyle.fontSize = '20px';
     headerStyle.textAlign = 'center';
     headerStyle.marginLeft = '5px';
+
     switch (order) {
         case 1:
             headerStyle.color = '#10FF04';
@@ -35,7 +37,7 @@ async function gifsDisplay(order) {
 
 
     // Setting Google Api
-    toTranslate = await toTranslate.replace('-', 'a');
+    toTranslate = await toTranslate.replace(/-|&#39;/g, 'a');
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyDL31sdj7F9GEGvZBydz88iKA5nrttfp4Q&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
@@ -51,7 +53,7 @@ async function gifsDisplay(order) {
     async function gifShow(num) {
         let gifResponse = await fetch(gifApis[num]);
         let jsonGif = await gifResponse.json();
-        let gif = await "https://web.archive.org/web/" + jsonGif[0].gif;
+        let gif = await "https://web.archive.org/web/" + jsonGif[1].gif;
         let arr = gif.split("/http:", 2);
         let gifnew = arr[0] + "if_/http:" + arr[1];
         return gifnew;
@@ -61,7 +63,7 @@ async function gifsDisplay(order) {
     promises = [gifShow(0), gifShow(1), gifShow(2), gifShow(3), gifShow(4)]
     Promise.all(promises)
         .then((gifnew) => {
-            let imgs = document.querySelectorAll(".img-wrapper" + orderIs + " img");
+            let imgs = document.querySelectorAll(".img-wrapper" + order + " img");
             for (let i = 0; i < imgs.length; i++) {
                 imgs[i].src = gifnew[i];
                 imgs[i].style.margin = 'auto 3px';
