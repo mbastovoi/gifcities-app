@@ -333,3 +333,27 @@ body::-webkit-scrollbar-track
 	background-image:url(./img/OldScroll/bg-scrollbar-track.png);
 	background-size:2px
 }
+
+
+@media (max-width: 500px) {
+    header .header-flex {
+        width: 95%;
+    }
+    
+    .main-wrapper {
+        flex-flow: column;
+    }
+
+    .left-wrapper, .news-wrapper, .right-wrapper {
+        width: 100%;
+    }
+
+    .left-wrapper, .right-wrapper {
+        height: auto;
+        margin: 1rem auto;
+    }
+
+    div > div.left-wrapper > img {
+        margin: auto;
+    }
+}
