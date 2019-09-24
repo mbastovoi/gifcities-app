@@ -17,6 +17,7 @@ body {
     url(./img/backgrounds/bluestatic.png), 
     url(./img/backgrounds/bluestatic.png); 
     cursor: url(http://www.rw-designer.com/cursor-extern.php?id=132), auto;
+    overflow-x: hidden;
 }
 
 #about {
@@ -42,8 +43,15 @@ body {
 }
 
 .header-flex .player {
+    display: flex;
+    flex-direction: row;
     align-self: flex-end;
-    margin-right: -32%;
+    margin-right: -10rem;
+    font-weight: bold;
+}
+
+.header-flex .player div {
+    margin: 1rem;
 }
 
 .header-flex .player button {
@@ -336,8 +344,14 @@ body::-webkit-scrollbar-track
 
 
 @media (max-width: 500px) {
+    
     header .header-flex {
         width: 95%;
+    }
+
+    header .header-flex .player {
+        width: 90%;
+        align-self: flex-start;
     }
     
     .main-wrapper {
@@ -356,4 +370,12 @@ body::-webkit-scrollbar-track
     div > div.left-wrapper > img {
         margin: auto;
     }
+
+    .news-wrapper > img {
+        width: 100%;
+    }
+    .news-wrapper > #irondivider {
+        width: 100%;
+    }
+    
 }
