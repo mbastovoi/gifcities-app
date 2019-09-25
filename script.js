@@ -53,6 +53,7 @@ async function gifsDisplay(order) {
     async function gifShow(num) {
         let gifResponse = await fetch(gifApis[num]);
         let jsonGif = await gifResponse.json();
+        timeout(2000);
         let gif = await "https://web.archive.org/web/" + jsonGif[1].gif;
         let arr = gif.split("/http:", 2);
         let gifnew = arr[0] + "if_/http:" + arr[1];
