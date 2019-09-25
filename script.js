@@ -2,6 +2,10 @@
 const newsLanguage = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"]
 
 
+async function stall(stallTime = 3000) {
+    await new Promise(resolve => setTimeout(resolve, stallTime));
+}
+
 async function gifsDisplay(order) {
 
     const rndNum = Math.floor(Math.random() * newsLanguage.length);
@@ -37,7 +41,7 @@ async function gifsDisplay(order) {
 
 
     // Setting Google Api
-    toTranslate = await toTranslate.replace(/-|&#39;|&quot;/g, '');
+    toTranslate = await toTranslate.replace("-", "").replace("\"", "").replace("\'", "");
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyDL31sdj7F9GEGvZBydz88iKA5nrttfp4Q&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
@@ -53,10 +57,10 @@ async function gifsDisplay(order) {
     async function gifShow(num) {
         let gifResponse = await fetch(gifApis[num]);
         let jsonGif = await gifResponse.json();
-        timeout(2000);
-        let gif = await "https://web.archive.org/web/" + jsonGif[1].gif;
-        let arr = gif.split("/http:", 2);
-        let gifnew = arr[0] + "if_/http:" + arr[1];
+        // await stall(500);
+        let gift = await "https://web.archive.org/web/" + jsonGif[0].gif;
+        let arr = await gift.split("/http:", 2);
+        let gifnew = await arr[0] + "if_/http:" + arr[1];
         return gifnew;
     }
 
@@ -69,7 +73,7 @@ async function gifsDisplay(order) {
                 imgs[i].src = gifnew[i];
                 imgs[i].style.margin = 'auto 3px';
             }
-        });
+        })
 }
 
 
