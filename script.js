@@ -43,6 +43,7 @@ async function gifsDisplay(order) {
 
     // Setting Gifcities Api
     let gifApis = (await filtered.map(x => "https://gifcities.archive.org/api/v1/gifsearch?q=" + x));
+    await console.log(gigApis);
 
     // Gif rendering function
     async function gifShow(num) {
