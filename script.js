@@ -10,7 +10,7 @@ async function gifsDisplay(order) {
     // Setting News Api
     let newsResponse = await fetch(newsApi);
     let json1 = await newsResponse.json();
-    let toTranslate = await json1.articles[0].title.split(' ').slice(0, 9).join(" ");
+    let toTranslate = await json1.articles[0].title.split(' ').slice(0, 10).join(" ");
     let articleLink = await json1.articles[0].url;
     document.getElementById("header" + order).textContent = toTranslate;
     document.getElementById("link" + order).href = articleLink;
@@ -38,7 +38,11 @@ async function gifsDisplay(order) {
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyDL31sdj7F9GEGvZBydz88iKA5nrttfp4Q&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
-    let newsWords = await json2.data.translations[0].translatedText.split(' ').slice(0, 5);
+    let newsWords = await json2.data.translations[0].translatedText.split(' ');
+
+    let filtered = newsWords.filter(word => word.length > 2).slice(0, 5);
+
+    console.log(filtered);
 
     // Setting Gifcities Api
     let gifApis = (await newsWords.map(x => "https://gifcities.archive.org/api/v1/gifsearch?q=" + x));
