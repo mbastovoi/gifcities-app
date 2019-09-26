@@ -1,10 +1,6 @@
 
-const newsLanguage = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"]
+const newsLanguage = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it", "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve", "za"];
 
-
-async function stall(stallTime = 3000) {
-    await new Promise(resolve => setTimeout(resolve, stallTime));
-}
 
 async function gifsDisplay(order) {
 
@@ -38,20 +34,14 @@ async function gifsDisplay(order) {
             break;
     }
 
-
-
     // Setting Google Api
-    toTranslate = await toTranslate.replace("-", "").replace("\"", "").replace("\'", "");
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyDL31sdj7F9GEGvZBydz88iKA5nrttfp4Q&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
     let newsWords = await json2.data.translations[0].translatedText.split(' ').slice(0, 5);
-    console.log(newsWords);
 
     // Setting Gifcities Api
     let gifApis = (await newsWords.map(x => "https://gifcities.archive.org/api/v1/gifsearch?q=" + x));
-    console.log(gifApis);
-
 
     // Gif rendering function
     async function gifShow(num) {
@@ -73,8 +63,9 @@ async function gifsDisplay(order) {
                 imgs[i].src = gifnew[i];
                 imgs[i].style.margin = 'auto 3px';
             }
-        })
+        });
 }
+
 
 
 gifsDisplay(1);
@@ -92,14 +83,12 @@ let stopButton = document.getElementById("stop");
 playButton.addEventListener("click", function () {
     playButton.style.display = 'none';
     stopButton.style.display = 'flex';
-    console.log('click');
 });
 
 
 stopButton.addEventListener("click", function () {
     stopButton.style.display = 'none';
     playButton.style.display = 'flex';
-    console.log('click');
 });
 
 // document.body("click", function () {
