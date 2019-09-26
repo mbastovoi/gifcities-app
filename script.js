@@ -39,7 +39,7 @@ async function gifsDisplay(order) {
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
     let newsWords = await json2.data.translations[0].translatedText.split(' ');
-    let filtered = newsWords.filter(word => word.length > 2).filter(word => word != 'are').slice(0, 5);
+    let filtered = newsWords.filter(word => word.length > 2).filter(word => word != 'are').filter(word => word != 'the').slice(0, 5);
 
     // Setting Gifcities Api
     let gifApis = (await filtered.map(x => "https://gifcities.archive.org/api/v1/gifsearch?q=" + x));
