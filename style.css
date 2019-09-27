@@ -34,6 +34,10 @@ body {
     color: black;
 }
 
+#about .header-flex img:first-child {
+    width: 70%;
+}
+
 .main-wrapper {
     width: 100%;
     display: flex;
@@ -350,8 +354,34 @@ body::-webkit-scrollbar-track
 	background-size:2px
 }
 
+.disclaimer {
+    margin: auto;
+    color: white;
+    font-size: 1rem;
+    width: 70%;
+    border: 5px solid silver; 
+    padding: 3px;
+    box-shadow:
+    0 0 0 3px hsl(0, 0%, 30%), 
+    0 0 0 5px hsl(0, 25%, 75%),
+     0 0 0 5px hsl(0, 1%, 10%);
+
+}
 
 @media (max-width: 500px) {
+
+    .disclaimer {
+        width: 90%;
+    }
+
+    #about .right-wrapper {
+        height: 0;
+    }
+
+    #about .header-flex img:first-child {
+        width: 100%;
+    }
+    
     button#play, button#stop {
         width: 80px;
     }
