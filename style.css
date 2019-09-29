@@ -34,7 +34,7 @@ body {
     color: black;
 }
 
-#about .header-flex img:first-child {
+#about .header-flex .about-me {
     width: 70%;
 }
 
@@ -406,6 +406,12 @@ body::-webkit-scrollbar-track
 
     .left-wrapper, .news-wrapper, .right-wrapper {
         width: 100%;
+    }
+
+    .left-wrapper .email-adress p {
+        padding-top: 1rem;
+        color: red;
+        font-size: 1rem;
     }
 
     .left-wrapper, .right-wrapper {
