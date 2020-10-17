@@ -5,7 +5,7 @@ const newsLanguage = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn"
 async function gifsDisplay(order) {
 
     const rndNum = Math.floor(Math.random() * newsLanguage.length);
-    let newsApi = "https://newsapi.org/v2/top-headlines?country=" + newsLanguage[rndNum] + "&apiKey=43375b1cc469414eb6193ab866d60da9";
+    let newsApi = "https://gnews.io/api/v4/top-headlines?country=" + newsLanguage[rndNum] + "&token=4d87631dbcc20e568dab4ee96b469041";
 
     // Setting News Api
     let newsResponse = await fetch(newsApi);
