@@ -38,7 +38,7 @@ async function gifsDisplay(order) {
     let googleApi = await "https://translation.googleapis.com/language/translate/v2?key=AIzaSyAlh2LwprjWTzc_EJ7nixFiGupDlUTZrXs&q=" + toTranslate + "&target=en";
     const transResponse = await fetch(googleApi);
     let json2 = await transResponse.json();
-    let newsWords = await json2.data.translations[0].translatedText.split(' ');
+    let newsWords = await json2.data.translations[0].translatedText.toString().replace(/(&quot\;)/g,"\"").split(' ');
     let filtered = newsWords.filter(word => word.length > 2).filter(word => word != 'are').filter(word => word != 'the').slice(0, 5);
 
     // Setting Gifcities Api
@@ -48,7 +48,7 @@ async function gifsDisplay(order) {
     // Gif rendering function
     async function gifShow(num) {
         let gifResponse = await fetch(gifApis[num]);
-        let jsonGif = await gifResponse.json().toString().replace(/(&quot\;)/g,"\"");
+        let jsonGif = await gifResponse.json();
         // await stall(500);
         let gift = await "https://web.archive.org/web/" + jsonGif[0].gif;
         let arr = await gift.split("/http:", 2);
