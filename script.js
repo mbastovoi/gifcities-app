@@ -48,7 +48,7 @@ async function gifsDisplay(order) {
     // Gif rendering function
     async function gifShow(num) {
         let gifResponse = await fetch(gifApis[num]);
-        let jsonGif = await gifResponse.json().replace(/(&quot\;)/g,"\"");
+        let jsonGif = await gifResponse.json().toString().replace(/(&quot\;)/g,"\"");
         // await stall(500);
         let gift = await "https://web.archive.org/web/" + jsonGif[0].gif;
         let arr = await gift.split("/http:", 2);
